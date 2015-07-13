@@ -40,9 +40,9 @@ module Urbanairship
         method = options.fetch(:method)
         body = options.fetch(:body)
         url = options.fetch(:url)
-        content_type = options.fetch(:content_type)
-        version = options.fetch(:version)
-        params = options.fetch(:params)
+        content_type = options.fetch(:content_type, nil)
+        version = options.fetch(:version, nil)
+        params = options.fetch(:params, nil)
         req_type = case method
           when 'GET'
             :get
