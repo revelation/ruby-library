@@ -100,7 +100,8 @@ module Urbanairship
       # @param [Object] url The existing Scheduled Push URL
       # @return [Object] Scheduled Push Object
       # def self.from_url(client: required('client'), url: required('url'))
-      def self.from_url(client: required('client'), url: required('url'))
+      # def self.from_url(client: required('client'), url: required('url'))
+      def self.from_url(options = {})
         client = options.fetch(:url)
         url = options.fetch(:url)
         scheduled_push = ScheduledPush.new(client)
