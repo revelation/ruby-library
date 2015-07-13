@@ -84,7 +84,7 @@ module Urbanairship
       # @example
       #   recent_date(months: 6)  # => { recent: { months: 6 }}
       #   recent_date(weeks: 3)  # => { recent: { weeks: 3 }}
-      
+
       # def recent_date(**params)
       #   fail ArgumentError, 'Only one range allowed' if params.size != 1
       #   k, v = params.first
@@ -108,12 +108,13 @@ module Urbanairship
       #   absolute_date(resolution: :minutes, start: '2012-01-01 12:00',
       #                 the_end: '2012-01-01 12:45')
       #   #=> {minutes: {end: '2012-01-01 12:45', start: '2012-01-01 12:00'}}
-      def absolute_date(resolution: required('resolution'), start: required('start'), the_end: required('the_end'))
-        unless DATE_TERMS.include?(resolution)
-          fail ArgumentError, "#{resolution} not in #{DATE_TERMS}"
-        end
-        { resolution => { start: start, end: the_end } }
-      end
+
+      # def absolute_date(resolution: required('resolution'), start: required('start'), the_end: required('the_end'))
+      #   unless DATE_TERMS.include?(resolution)
+      #     fail ArgumentError, "#{resolution} not in #{DATE_TERMS}"
+      #   end
+      #   { resolution => { start: start, end: the_end } }
+      # end
 
       # Select a location expression.
       #
