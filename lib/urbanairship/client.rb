@@ -16,7 +16,11 @@ module Urbanairship
       # @param [Object] key Application Key
       # @param [Object] secret Application Secret
       # @return [Object] Client
-      def initialize(key: required('key'), secret: required('secret'))
+      # def initialize(key: required('key'), secret: required('secret'))
+      def initialize(options = {})
+        key = options.fetch(:key)
+        secret = options.fetch(:secret)
+
         @key = key
         @secret = secret
       end
@@ -30,8 +34,15 @@ module Urbanairship
       # @param [Object] version API Version
       # @param [Object] params Parameters
       # @return [Object] Push Response
-      def send_request(method: required('method'), body: required('body'), url: required('url'),
-                       content_type: nil, version: nil, params: nil)
+      # def send_request(method: required('method'), body: required('body'), url: required('url'),
+        #                  content_type: nil, version: nil, params: nil)
+      def send_request(options = {})
+        method = options.fetch(:method)
+        body = options.fetch(:body)
+        url = options.fetch(:url)
+        content_type = options.fetch(:content_type)
+        version = options.fetch(:version)
+        params = options.fetch(:params)
         req_type = case method
           when 'GET'
             :get
