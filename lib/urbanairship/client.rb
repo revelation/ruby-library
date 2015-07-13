@@ -18,6 +18,7 @@ module Urbanairship
       # @return [Object] Client
       # def initialize(key: required('key'), secret: required('secret'))
       def initialize(options = {})
+        binding.pry
         key = options.fetch(:key)
         secret = options.fetch(:secret)
 
