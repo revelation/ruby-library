@@ -9,7 +9,7 @@ module Urbanairship
       include Urbanairship::Loggable
 
       # set default client timeout to 5 seconds
-      Unirest.timeout(5)
+      # Unirest.timeout(5)
 
       # Initialize the Client
       #
