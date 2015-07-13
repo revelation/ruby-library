@@ -84,14 +84,15 @@ module Urbanairship
       # @example
       #   recent_date(months: 6)  # => { recent: { months: 6 }}
       #   recent_date(weeks: 3)  # => { recent: { weeks: 3 }}
-      def recent_date(**params)
-        fail ArgumentError, 'Only one range allowed' if params.size != 1
-        k, v = params.first
-        unless DATE_TERMS.include?(k)
-          fail ArgumentError, "#{k} not in #{DATE_TERMS}"
-        end
-        { recent: { k => v } }
-      end
+      
+      # def recent_date(**params)
+      #   fail ArgumentError, 'Only one range allowed' if params.size != 1
+      #   k, v = params.first
+      #   unless DATE_TERMS.include?(k)
+      #     fail ArgumentError, "#{k} not in #{DATE_TERMS}"
+      #   end
+      #   { recent: { k => v } }
+      # end
 
       # Select an absolute date range for a location selector.
       #
